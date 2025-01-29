@@ -29,6 +29,7 @@ $var || va$r (contener caracteres especiales)
 No DEBEMOS hacer (no son exactamente errores):
 Contener caracteres fuera del ASCII
 Empezar por guion bajo(reservado para determinadas situaciones, por convenio)
+Utilizar palabras reservadas del sistema (True, False, print...)
 
 Que DEBEMOS hacer
 Nombrar a nuestras variables con palabras descriptivas
