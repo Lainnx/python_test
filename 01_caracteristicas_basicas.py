@@ -63,3 +63,4 @@ git rm --cache filename #para quitarlo de la fase stage a Untracked
 
 git commit -m "mensaje" #pasa de fase, a punto para subirlo que ya estan i no se deberian editar
             #-m message
+            #pasar a commit (ficheros validados)
