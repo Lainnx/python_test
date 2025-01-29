@@ -64,6 +64,7 @@ fases de git
 git status #da info de como esta en este momento el repositorio
 
 #crear fichero ".gitignore" lista de ficheros que queremos que git ignore (gitignore.io)
+#https://pastebin.com/Pzy99kv1
 
 git add 
     .   #todo menos lo del gitignore
