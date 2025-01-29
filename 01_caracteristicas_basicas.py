@@ -21,6 +21,7 @@ Python tiene tipàdo fuerte
     suma = n+2 #ERROR, no se puede sumar numeros y texto
     concatenacion = n + srt(2)  #convertir el int 2 en string
     suma_numerica = int("1") + 2 #convertir el srting "1" en int
+    
 No se puede hacer:
 1var (empezar por numero, pueded contener)
 $var || va$r (contener caracteres especiales)
