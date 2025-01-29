@@ -37,12 +37,12 @@ git config --global -e #para ver la configuracion actual abre fichero git.config
 git init #inicia un repositorio git vacío
 
 fases de git
-|---------------------------------------------------------------|-------|
+ |---------------------------------------------------------------|------|
     git                                                         |github
  |working/unstage   |stage          |commit                     |server |
  ---------U----------------A--------------------M------------------------------------
  |donde estan to-   |los ficheros   |mueves ficheros de stage   |subir al servidor
- |dos los ficheros  |que pasas para |y añades descripcion
+ |dos los ficheros  |que pasas para |y añades descripcion       |push, 
  |                  |control de ver |
                     |(contraseñas o |
                     |ficheros muy   |
