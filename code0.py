@@ -1,4 +1,4 @@
-
+"""
 #Imprimeix una piramide
 #############################
 #rang = 5    #altura piramide
@@ -21,7 +21,7 @@ if len(char) == 1 :
     else : 
         print("escriu nomes un caracter : ")
         char = input()
-
+"""
 """
 from datetime import datetime
 print(datetime.now())
