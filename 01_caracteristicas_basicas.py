@@ -64,3 +64,7 @@ git rm --cache filename #para quitarlo de la fase stage a Untracked
 git commit -m "mensaje" #pasa de fase, a punto para subirlo que ya estan i no se deberian editar
             #-m message
             #pasar a commit (ficheros validados)
+
+git remote add origin https://github.com/nom_conta/nom_repo.git #donde quieres enviar los ficheros de origen en hdd a web SOLO UNA VEZ
+git branch -M main  #para cambiar nombre de master a main SOLO UNA VEZ
+git push -u origin main #sube la info a la nube
