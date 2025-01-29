@@ -17,7 +17,7 @@ Las variables tienen tipo
 Python es de tipado dinamico, las variables pueden tener cualquier tipo, el tipo se asigna en el momento de ejecución
     n = 1   #int
     n = "uno"   #string
-Python tiene tipàdo fuerte
+Python tiene tipado fuerte
     suma = n+2 #ERROR, no se puede sumar numeros y texto
     concatenacion = n + srt(2)  #convertir el int 2 en string
     suma_numerica = int("1") + 2 #convertir el srting "1" en int
