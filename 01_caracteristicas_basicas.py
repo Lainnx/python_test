@@ -10,6 +10,17 @@ identificador = valor
 
 Hay reglas para llamar a los identificadores (nombre variable)
 
+Las variables tienen tipo
+    --numeros (int, float...)
+    --texto (sting)
+    --booleanos (True, False)
+Python es de tipado dinamico, las variables pueden tener cualquier tipo, el tipo se asigna en el momento de ejecución
+    n = 1   #int
+    n = "uno"   #string
+Python tiene tipàdo fuerte
+    suma = n+2 #ERROR, no se puede sumar numeros y texto
+    concatenacion = n + srt(2)  #convertir el int 2 en string
+    suma_numerica = int("1") + 2 #convertir el srting "1" en int
 No se puede hacer:
 1var (empezar por numero, pueded contener)
 $var || va$r (contener caracteres especiales)
@@ -68,3 +79,5 @@ git commit -m "mensaje" #pasa de fase, a punto para subirlo que ya estan i no se
 git remote add origin https://github.com/nom_conta/nom_repo.git #donde quieres enviar los ficheros de origen en hdd a web SOLO UNA VEZ
 git branch -M main  #para cambiar nombre de master a main SOLO UNA VEZ
 git push -u origin main #sube la info a la nube
+
+################################################
