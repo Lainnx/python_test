@@ -44,7 +44,7 @@ elif edad == 69:
 else:
     print("tu puedes con todo")
 """
-
+"""
 #preguntar edad,
 #si tiene menos de 0 o mas de 120 -no me lo creo
 #si tiene menos de 18 - aun no puedes votar, te faltan x años
@@ -60,4 +60,43 @@ elif 18 <= edad < 120:
     print(f"puedes votar de hace {edad-18} años")               #https://ellibrodepython.com/cadenas-python#formateo-de-cadenas
 else:
     print("no me lo creo")
-    
+"""   
+
+#Pedir al usuario un numero
+#pedir otro numero
+#si no son numeros le diremosque no se puede hacer i break
+#pedir que operacion matematica quiere hacer (7 posiblidades)
+    #suma, resta, multi, division, exp, div_ent, modulo
+#si no es ninguna de estas mostrar mensaje de error, si divide por 0 tambien
+#al final debe aparecer: 
+#1 3 suma
+#1 + 3 = 4
+
+n1 = input("numero 1? ")
+n2 = input("numero 2? ")
+op = input("que operacion quieres hacer? operaciones disponibles:\nsuma\nresta\nmulti (multiplicacion)\ndivision\nexp (exponencial)\ndiv_ent (division entera)\nmodulo\n:")
+
+if n1.isnumeric() and n2.isnumeric():           #x.issomething() - son funciones, no olvidar ()
+    n1=int(n1)                                  #ASIGNAR LAS CONVERSIONES in() o str()
+    n2=int(n2)
+    if op == "suma":
+        print(f"{n1} + {n2} = {n1+n2}")
+    elif op == "resta":
+        print(f"{n1} - {n2} = {n1-n2}")
+    elif op == "multi":
+        print(f"{n1} * {n2} = {n1*n2}")
+    elif op == "division":
+        if n2 == 0:
+            print("no se puede dividir por 0")
+        else:
+            print(f"{n1} / {n2} = {n1/n2}")
+    elif op == "exp":
+        print(f"{n1} ^ {n2} = {n1**n2}")
+    elif op == "div_ent":
+        print(f"{n1} // {n2} = {n1//n2}")
+    elif op == "modulo":
+        print(f"{n1} % {n2} = {n1%n2}")
+    else:
+        print("ERROR: operacion no reconocida")
+else:
+    print("tienes que introducir numeros, no se puede operar con el input dado")
