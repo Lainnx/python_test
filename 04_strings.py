@@ -22,6 +22,7 @@ datos="Me llamo " + nombre + " " + apellido + " y tengo " + edad + " años"
 print(datos)
 """
 
+"""
 frase = "esto es una frase un poco larga, pero podria serlo mas"
 #Primer caracter del string
 frase[0]
@@ -91,3 +92,16 @@ print("frase.replace('a', 'i') ", frase.replace("a", "i"))
 palabras_en_frase = frase.split(" ")    #corta la frase por los espacios, se puede cortar por otros chars, el chars por el que se corta se pierde, en este caso los espacios
 print("Lista de palabras ", palabras_en_frase) #crea una lista
 print("len ",len(palabras_en_frase))    #numero de palabras
+"""
+"""
+#Mini ejercicio
+texto3 = "bUeNos dÍAs"   #Buenos días
+texto3 = texto3.lower()
+texto3 = texto3.capitalize()
+print(texto3)
+
+print("abeja" > "flor") #compara los valores de los primeros caracteres, luego el segundo, luego el 3o (en caso de empate) a tiene un valor mas pequeño que f
+print("aab" > "ab")
+print("aba" > "aaz")
+
+"""

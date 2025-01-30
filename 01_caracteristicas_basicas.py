@@ -36,6 +36,7 @@ Nombrar a nuestras variables con palabras descriptivas
 Podemons usar mas de una palabra separadas por un guion bajo (directiva PEP-8)
 
 """
+"""
 git config #para configurar git, SOLO SE HACE UNA VEZ
 --global # para todos los proyectos git, sin especificar estandard
 git config --global user.name "user name" #sino hi ha espais no cal ""
@@ -82,5 +83,5 @@ git commit -m "mensaje" #pasa de fase, a punto para subirlo que ya estan i no se
 git remote add origin https://github.com/nom_conta/nom_repo.git #donde quieres enviar los ficheros de origen en hdd a web SOLO UNA VEZ
 git branch -M main  #para cambiar nombre de master a main SOLO UNA VEZ
 git push -u origin main #sube la info a la nube
-
+"""
 ################################################
