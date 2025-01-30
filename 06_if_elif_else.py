@@ -75,10 +75,11 @@ else:
 n1 = input("numero 1? ")
 n2 = input("numero 2? ")
 op = input("que operacion quieres hacer? operaciones disponibles:\nsuma\nresta\nmulti (multiplicacion)\ndivision\nexp (exponencial)\ndiv_ent (division entera)\nmodulo\n:")
-
+#f=2.5
+#print(f.isfloat())
 if n1.isnumeric() and n2.isnumeric():           #x.issomething() - son funciones, no olvidar ()
-    n1=int(n1)                                  #ASIGNAR LAS CONVERSIONES in() o str()
-    n2=int(n2)
+    n1=float(n1)                                  #ASIGNAR LAS CONVERSIONES in() o str()
+    n2=float(n2)
     if op == "suma":
         print(f"{n1} + {n2} = {n1+n2}")
     elif op == "resta":
