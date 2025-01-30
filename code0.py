@@ -31,7 +31,7 @@ exponencial = 2 ** 0.5  #raiz cuadrada
 division_entera = 20 // 6   #te da solo la parte entera
 modulo = 20 % 3     #el resto de la division (el entero mas cercano 6*3=18 -->18-20= 2) so % 2 ==0 el numero es par
 
-texto_formateado texto = f"{t1} {t2}" #vas vcambiando las variables y el formato a parte
+texto_formateado texto = f"{t1} {t2}" #vas vcambiando las variables y el formato a parte, es similar a C - https://ellibrodepython.com/cadenas-python#formateo-de-cadenas
 texto final = "{} {}".format{t1, t2}
 
 """
