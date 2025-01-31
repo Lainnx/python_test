@@ -142,7 +142,7 @@ if num1.isalpha():                              #si el input es alfanumerico, en
 else:                                           #si introducimos ???? el isalpha no lo atrapa --> excepciones
     print("se puede hacer")
 """
-
+"""
 import os
 os.system("cls")
 
@@ -180,3 +180,4 @@ else:                                               #optativo
 finally:                                            #optativo
     print("finally: este se ejecuta siempre")       #para limpiar despues de fallos, te intentas conectar a base de datos pero esta caida, salta error pero se han consumido
                                                     #recursos en memoria, para cerrar el programa y limpiar
+"""

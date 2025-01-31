@@ -17,6 +17,7 @@ except:         #lo que se va a ejecutar cuando se produce el error
 print("el prgrama continua... ")
 """                                     #capturamos posibles errores criticos y los gestionamos para que tengan una salida digna
 #try /except -- si hay try debe haber except,  el try dice al programa que esté atento a posibles errores
+"""
 try:
     num = float(input("un numero? "))
 except ValueError:                              #error de conversion de tipos
@@ -30,3 +31,4 @@ else:                                               #optativo
 finally:                                            #optativo       #mas info en 06_if_elif_else.py
     print("finally: este se ejecuta siempre")
 print("el programa continua")
+"""
