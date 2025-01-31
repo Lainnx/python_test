@@ -65,8 +65,8 @@ match dia:
     case _ :
         print("creo que estas confundido")
 """
-
-print("solucion 3")
+"""
+#print("solucion 3")
 try:
     respuesta = input("Indique la operacion a realizar:\nEjemplo: 10, 5, +\n").split(", ")
     print(respuesta)
@@ -74,7 +74,33 @@ try:
     n2 = float(respuesta[1])
     op = respuesta[2]
     
+    match op:
+        case "+"|"-"|"*"|"/"|"**"|"//"|"%":
+            print(eval(f"{n1}{op}{n2}"))    #eval parte de un string i si contiene operaciones matematicas las va a ejecutar
+            
+        case _ :
+            print("operacion desconocida, revisa la entrada de datos")
 except ValueError:                                  
     print("tienes que introducir un numero valido en cifras")
 except ZeroDivisionError:
     print("no se puede dividir por 0")
+
+print(eval("1 + 2"))    #3
+"""
+
+#Ejercicio PALINDROMOS
+#obviar/ignorar mayusculas y espacios
+#que el ususario pueda escribir algo y comprobar si es palindromo
+
+pal=input("Escribe una frase: ")
+pal=pal.lower()         #pasa a minusculas 
+pal=pal.strip()         #quita esacios exteriores
+pal=pal.split(" ")      #quitas los espacios por si hay mas de uno
+pal="".join(pal)        #vuelves recomponer la frase(string) sin espacios
+print(pal)
+palneg=pal[::-1] 
+print(palneg)
+if pal==palneg:
+    print("es un plaindromo")
+else:
+    print("no es un palindromo")

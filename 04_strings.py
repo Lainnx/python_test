@@ -103,5 +103,18 @@ print(texto3)
 print("abeja" > "flor") #compara los valores de los primeros caracteres, luego el segundo, luego el 3o (en caso de empate) a tiene un valor mas pequeño que f
 print("aab" > "ab")
 print("aba" > "aaz")
-
+"""
+"""
+#   STRIP
+texto_con_espacios ="     hola es una      "        #strip te quita los espacios que estan al principio y al final
+texto_sin_espacios = texto_con_espacios.strip()       #lstrip quita los espacios del lado izquierdo
+print("texto_sin_espacios ", texto_sin_espacios)     #rstrip quita los espacios del lado derecho                 COPROVAR SI ES CORRECTE
+"""
+"""
+frase="hola soy un programa de python"
+palabras = frase.split(" ")     #le quita el espacio
+print(palabras)
+print(len(palabras))
+frase2=" ".join(palabras)       #le vuelve a poner los espacios
+print(frase2)
 """
