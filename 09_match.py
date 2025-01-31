@@ -13,10 +13,10 @@ match mes:  #segun el valor que tenga mes haremos algo
     case _ :
         print("Nose donde iré")
 """
-"""
+
 import os
 os.system("cls")
-
+"""
 try:                                    #Porque se puede roducir una excepcion a causa del input del usuario
     n1 = float(input("numero 1? "))     #con float() aqui forzamos error si no se introducen numeros y lidiamos con ellos con los except
     n2 = float(input("numero 2? "))     #
@@ -58,10 +58,23 @@ dia = dia.lower()                           #porque los case son todos en minusc
 match dia:
     case "lunes" :
         print("toca sistemas")
-    case "martes"|"miercoles"|"jueves"|"viernes" :
+    case "martes"|"miercoles"|"miércoles"|"jueves"|"viernes" :
         print("toca python")
-    case "sabado"|"domingo":
+    case "sabado"|"domingo"|"sábado":
         print("toca descansar")
     case _ :
         print("creo que estas confundido")
 """
+
+print("solucion 3")
+try:
+    respuesta = input("Indique la operacion a realizar:\nEjemplo: 10, 5, +\n").split(", ")
+    print(respuesta)
+    n1 = float(respuesta[0])
+    n2 = float(respuesta[1])
+    op = respuesta[2]
+    
+except ValueError:                                  
+    print("tienes que introducir un numero valido en cifras")
+except ZeroDivisionError:
+    print("no se puede dividir por 0")
