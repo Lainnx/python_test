@@ -110,7 +110,7 @@ if n1.startswith("-"):                           #para negativos
 #if n1.isnumeric() and n2.isnumeric():          #x.issomething() - son funciones, no olvidar ()
 #    n1=float(n1)                               #ASIGNAR LAS CONVERSIONES in() o str()
 #    n2=float(n2)
-if True:
+
     if op == "suma":                            #operaciones
         print(f"{n1} + {n2} = {n1+n2}")
     elif op == "resta":
@@ -133,10 +133,50 @@ if True:
 else:
     print("tienes que introducir numeros, no se puede operar con el input dado")
 
-"""     
+"""   
+"""  
         #ponemos el float aqui i provocamos error cuando se introduce algo que no es un numero -->excepcion para gestionar el error
 num1 = float(input("escribe el primer numero ."))
 if num1.isalpha():                              #si el input es alfanumerico, en vez e filtrar si son numeros e intentar distinguir que tipo de numero es filtrar cuando no
     print("no se puede hacer")                  #son numeros.
 else:                                           #si introducimos ???? el isalpha no lo atrapa --> excepciones
     print("se puede hacer")
+"""
+
+import os
+os.system("cls")
+
+try:                                    #Porque se puede roducir una excepcion a causa del input del usuario
+    n1 = float(input("numero 1? "))     #con float() aqui forzamos error si no se introducen numeros y lidiamos con ellos con los except
+    n2 = float(input("numero 2? "))     #
+    op = input("que operacion quieres hacer? operaciones disponibles:\nsuma\nresta\nmulti (multiplicacion)\ndivision\nexp (exponencial)\ndiv_ent (division entera)\nmodulo\n:")
+
+    if op == "suma":                            #operaciones
+        print(f"{n1} + {n2} = {n1+n2}")
+    elif op == "resta":
+        print(f"{n1} - {n2} = {n1-n2}")
+    elif op == "multi":
+        print(f"{n1} * {n2} = {n1*n2}")
+    elif op == "division":
+        print(f"{n1} / {n2} = {n1/n2}")
+        #if n2 == 0:
+        #    print("no se puede dividir por 0") #en vez de esto -> except con el error zerodivision
+        #else:
+        #    print(f"{n1} / {n2} = {n1/n2}")
+    elif op == "exp":
+        print(f"{n1} ^ {n2} = {n1**n2}")
+    elif op == "div_ent":
+        print(f"{n1} // {n2} = {n1//n2}")   #aqui falta para no dividir por 0
+    elif op == "modulo":
+        print(f"{n1} % {n2} = {n1%n2}")     #aqui falta para no dividir por 0........ con excepciones te ahorras 3 if/else 
+    else:
+        print("ERROR: operacion no reconocida")
+except ValueError:                                  #si se pone un try hay que poner al menos un except
+    print("tienes que introducir un numero valido en cifras")
+except ZeroDivisionError:
+    print("no se puede dividir por 0")
+else:                                               #optativo
+    print("else: esto se ejecuta si no se levanta la excepcion")
+finally:                                            #optativo
+    print("finally: este se ejecuta siempre")       #para limpiar despues de fallos, te intentas conectar a base de datos pero esta caida, salta error pero se han consumido
+                                                    #recursos en memoria, para cerrar el programa y limpiar

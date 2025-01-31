@@ -25,5 +25,8 @@ except ZeroDivisionError:                       #error por division por 0
     print("no se puede dividir por 0")
 except:                                         #error genérico
     print("ha ocurrido un error")
-
+else:                                               #optativo
+    print("else: esto se ejecuta si no se levanta la excepcion")
+finally:                                            #optativo       #mas info en 06_if_elif_else.py
+    print("finally: este se ejecuta siempre")
 print("el programa continua")
