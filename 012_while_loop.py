@@ -25,4 +25,4 @@ while True:
         monedas -= prestamo
     else:
         print("No tengo suficientes monedas")
-        break
+        

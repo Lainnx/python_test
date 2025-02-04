@@ -68,3 +68,5 @@ lista1 = lista1 + lista2
 lista1 += lista2
 print(lista1)
 """
+
+# https://www.w3schools.com/python/python_arrays.asp
