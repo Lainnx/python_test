@@ -51,6 +51,20 @@ print("del ",lista)
 
 #.remove("valor"), para eliminar UN elemento por valor en vez de por posicion SOLO UNO, solo elimina el primero que encuentra
 print(lista)
-lista.remove("b")
+num = lista.count("b")
+#print(num)
+for x in range (num):         #(0,1) de 0 a 1, no cuenta el ultimo || 2 veces
+    #print(x)
+    lista.remove("b")         #quita todas las "b" de la lista
 print(lista)
+"""
+#Unir 2 listas, 3 metodos
+lista1 = [0,1,2]
+lista2 = [3,4,5]
 
+lista1.extend(lista2)
+lista1 = lista1 + lista2
+#lista2.extend(lista1)
+lista1 += lista2
+print(lista1)
+"""
