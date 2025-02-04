@@ -23,6 +23,11 @@ while True:
     prestamo = float(input("Cuantas monedas necesitas? "))
     if prestamo <= monedas:
         monedas -= prestamo
+        #print(monedas)
+    elif prestamo > monedas > 0:
+        print("No tengo suficientes monedas, pide menos")
+        #print(monedas)
     else:
-        print("No tengo suficientes monedas")
+        print("No tengo más monedas")
+        break
         
