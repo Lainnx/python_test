@@ -14,8 +14,8 @@ match mes:  #segun el valor que tenga mes haremos algo
         print("Nose donde iré")
 """
 
-import os
-os.system("cls")
+#import os
+#os.system("cls")
 """
 try:                                    #Porque se puede roducir una excepcion a causa del input del usuario
     n1 = float(input("numero 1? "))     #con float() aqui forzamos error si no se introducen numeros y lidiamos con ellos con los except
@@ -94,8 +94,8 @@ print(eval("1 + 2"))    #3
 """
 pal=input("Escribe una frase: ")
 pal=pal.lower()         #pasa a minusculas 
-pal=pal.strip()         #quita esacios exteriores
-pal=pal.split(" ")      #quitas los espacios por si hay mas de uno
+pal=pal.strip()         #quita esacios exteriores (____de____)
+pal=pal.split(" ")      #quitas los espacios 
 pal="".join(pal)        #vuelves recomponer la frase(string) sin espacios
 print(pal)
 palneg=pal[::-1]        #invierte la frase
@@ -105,6 +105,7 @@ if pal==palneg:
 else:
     print("no es un palindromo")
 """
+"""
 #pregunta un numero y que te diga si es par o impar
 num=float(input("numero? "))
 
@@ -112,3 +113,4 @@ if num % 2 == 0:
     print("es par")
 else:
     print("no es par")
+"""
