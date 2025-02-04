@@ -91,16 +91,24 @@ print(eval("1 + 2"))    #3
 #Ejercicio PALINDROMOS
 #obviar/ignorar mayusculas y espacios
 #que el ususario pueda escribir algo y comprobar si es palindromo
-
+"""
 pal=input("Escribe una frase: ")
 pal=pal.lower()         #pasa a minusculas 
 pal=pal.strip()         #quita esacios exteriores
 pal=pal.split(" ")      #quitas los espacios por si hay mas de uno
 pal="".join(pal)        #vuelves recomponer la frase(string) sin espacios
 print(pal)
-palneg=pal[::-1] 
+palneg=pal[::-1]        #invierte la frase
 print(palneg)
 if pal==palneg:
     print("es un plaindromo")
 else:
     print("no es un palindromo")
+"""
+#pregunta un numero y que te diga si es par o impar
+num=float(input("numero? "))
+
+if num % 2 == 0:
+    print("es par")
+else:
+    print("no es par")
