@@ -1,27 +1,34 @@
-"""
+
 #Imprimeix una piramide
 #############################
 #rang = 5    #altura piramide
 print("Escriu l'altura de la piramide :")
-rangi = input()
-rang = int(rangi)
+
+while True:
+    rangi = input()
+    try:
+        rang = int(rangi)
+        break
+    except ValueError:
+        print("Introduce un numero")
 
 print("De que vols que estigui feta la piràmide? Escriu un caracter :")
 char = input()
 
-#print("len" , len(char))
-if len(char) == 1 :
-    for x in range(rang):
-        print(char * x)
-    c=x+1
-    for x in range(rang):
-        print(char * c)
-        #print(c)
-        c=c-1
+while True:
+    #print("len" , len(char))
+    if len(char) == 1 :
+        for x in range(rang):
+            print(char * x)
+        c=x+1
+        for x in range(rang):
+            print(char * c)
+            #print(c)
+            c=c-1
+        break
     else : 
-        print("escriu nomes un caracter : ")
-        char = input()
-"""
+        print("Escriu nomes un caracter :")
+
 """
 from datetime import datetime
 print(datetime.now())

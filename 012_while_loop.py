@@ -24,10 +24,11 @@ while True:
     if prestamo <= monedas:
         monedas -= prestamo
         #print(monedas)
+        print(f"me quedan {monedas} monedas")
     elif prestamo > monedas > 0:
         print("No tengo suficientes monedas, pide menos")
         #print(monedas)
+        print(f"me quedan {monedas} monedas")
     else:
         print("No tengo más monedas")
         break
-        
