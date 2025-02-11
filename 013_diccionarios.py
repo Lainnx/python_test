@@ -9,6 +9,7 @@
 
 # Con listas no es viable puede guardar informacion compleja
 # alumnos = ["Pepe","Garcia",27,"calle xx",["Python","JS"]]
+import os
 
 alumnos = [["Pepe","Garcia",27,"calle xx",["Python","JS"]], ["Maria","Pons",22,"calle xx",["Python","JS"]]]   #array de arrays
 
@@ -41,3 +42,25 @@ for props in dic_alumno_1:  #print claves
     print(props)
 print(dic_alumno_1.keys())  #imprime las llaves y las pone en un array
 print(dic_alumno_1.values())#imprime los valores en un array
+
+########################################################
+os.system("cls")
+
+#Diccionarios, los diccionarios son mutables
+#El acceso al dato se prohibe medinte un identificador llamado "clave". Así: "clave": "valor",separados por "," la clave puede ser un string, un numero(no se suele hacer), una tupla,...
+# {}
+dic_1 = {}  #diccionario vacio  
+list_1 = [] #lista vacia        || tienen caracter booleano
+
+if not list_1:
+    print("La lista esta vacia")
+
+dic_1 = {"nombre": "Maria","apellido": "Callas","edad": 53} #puedes acceder por la clave en lugar del indice, no tienes que saber en que orden estan los datos
+print(dic_1["nombre"])          #si busca así y no existe la clave da error y rompoe el codigo
+# print(dic_1["direccion"])     #error porque no hay clave direccion
+#mejor opcion
+print(dic_1.get("nombre"))      #el get no rompe el codigo si no hay la clave,
+print(dic_1.get("direccion"))   #None, no error
+
+clave = "direccion"             #tambien se le puede poner un segundo argumento, un mensaje
+print(dic_1.get(clave, f"la clave {clave} no existe en el diccionario")) #en lugar del none

@@ -1,8 +1,11 @@
 #Repaso Listas
+#son mutables (se pueden cambiar )
 
 lista = [] #lista vacía
 
 lista.append("Anna")    #lista con 1 elemnto, ["Anna"] (entre comillas)
+print(lista)
+lista[0] = "Marta"
 print(lista)
 
 lista[0]    #las listas son conelecciones de datos indexados, EMPIEZA POR 0
@@ -34,10 +37,22 @@ lista_numeros = list(range(0,21))
 
 lista_pares = lista_numeros[::2]    #de inicio:a fin : de 2 en 2
 print(lista_pares)
-lista_sq = []
+
 #Necesitamos otra lista con los numeros elevados al cuadrado
-lista_numeros2 = list(range(0,11))
-print(lista_numeros2)
-for i, numero in enumerate(lista_numeros2):
-    lista_sq.append(numero * numero)
-print(lista_sq)
+#forma 1
+lista_sq = []
+lista_numeros2 = list(range(0,11))  #lista del 0 al 10| 11 elementos
+# print(lista_numeros2)
+for numero in lista_numeros2:
+    lista_sq.append(numero ** 2)
+print(lista_sq)                                             #los dos codigos hacen lo mismo
+
+#forma 2 (excusivo de python -> list comprehensions)
+lista_sq = print([numero**2 for numero in lista_numeros2])      #deveuelve el num al quadrado obtenido buscando numero en lista_numeros2
+                                                                #el for, el if el else sin :                                                                                                             
+
+
+#no recomendado (deestructuring), con las tuplas tambien se puede hacer, si tienes muchos valores cuesta mas de leer
+lista_ciudades = ["NY", "BCN", "LA"]
+ny, la, bcn = lista_ciudades
+print(ny, la ,bcn)  #NY, BCN, LA
