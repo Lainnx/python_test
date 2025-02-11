@@ -64,3 +64,29 @@ print(dic_1.get("direccion"))   #None, no error
 
 clave = "direccion"             #tambien se le puede poner un segundo argumento, un mensaje
 print(dic_1.get(clave, f"la clave {clave} no existe en el diccionario")) #en lugar del none
+
+#podemos iterar por lo que hay dentro
+#iteracion directa
+for propiedad in dic_1:
+    print(propiedad)        #la iteracion da las claves
+
+#iteracion especifica de claves
+for propiedad in dic_1.keys():  #obtiene las claves
+    print(propiedad)
+#iteracion especifica de valores
+for propiedad in dic_1.values():  #obtiene los valores
+    print(propiedad)
+
+#iteracion especifica de valores
+for clave, valor in dic_1.items():  #obtiene las 2 cosas clave y valor, en ese orden 
+    print(f"{clave} : {valor}")
+
+#para añadir otro elemento (conjunto de clave y valor)
+dic_1["pais"] = "Grecia"
+print(dic_1)
+#valores de la actualizacion
+dic_actualizacion = {"ciudad": "Paris", "edad": 50}     
+
+dic_1.update(dic_actualizacion)                         #modifica valores y añade cosas si no estan
+print(dic_1)
+
