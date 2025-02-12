@@ -27,18 +27,18 @@ while True:
     print("X. Para salir del programa")
     # print(lista_usuarios)
     # print(f"usuario {lista_usuarios} \nexist {lista_exist}")
-    opcion = input("").strip().lower()
+    opcion = input("").strip().lower()                          #strip().lower() para quitar posibles espacios y x minuscula
     
     existe = 0
     match opcion:
         case "1":
             # existe = 0
-            new_user = input("Introduce el nombre del usuario que deseas añadir: ").strip().title()
+            new_user = input("Introduce el nombre del usuario que deseas añadir: ").strip().title()     #title pone la primera letra mayus y el resto en minus
             # usuario_nuevo = {"nombre":user,"visitas":0}
             if lista_usuarios:                                      #si no hay nada en la lista el for no tiene sobre qué iterar
-                # for user in lista_usuarios:                         #user es un diccionario, iteramos sobre todos los de la LITA DE USUARIOS
-                #     if user["nombre"] not in lista_exist:           #ITERACION: si el nombre del dic no esta el lista_exist se añade a la lista_exist, 
-                #         lista_exist.append(user["nombre"])          #sino no pasa a los siguiente
+                # for user in lista_usuarios:                         #user es un diccionario, iteramos sobre todos los de la LISTA DE USUARIOS
+                #     if user["nombre"] not in lista_exist:           
+                #         lista_exist.append(user["nombre"])          
                 #         print("EXIST: ",lista_exist)
                 #         print("user", user["nombre"])
 
@@ -49,8 +49,8 @@ while True:
                     usuario_nuevo = {"nombre":new_user,"visitas":0}     #si new_user no esta en lista exist (||) se crea un nuevo usuario y se añade a lista_usuarios
                     lista_usuarios.append(usuario_nuevo) 
                     print(f"Usuario {new_user} añadido correctamente")
-                    lista_exist.append(usuario_nuevo["nombre"])         #se añaden los nombres que no estan ya en la lista
-                    # print(lista_usuarios, lista_exist)   
+                    lista_exist.append(usuario_nuevo["nombre"])         #se añaden los nombres que no estan ya, en la lista, si estamos añadiendo un usuario nuevo no estará en 
+                    # print(lista_usuarios, lista_exist)                #lista exist
                 
                     # if user["nombre"] == new_user:
                     #     existe += 1
@@ -63,11 +63,11 @@ while True:
                 #     print("Ese usuario ya existe")
                 #     print("user: ",new_user)
                     # user["visitas"] += 1
-            else:
+            else:                                                       #el primer elemento de la lista,
                 usuario_nuevo = {"nombre":new_user,"visitas":0}
                 lista_usuarios.append(usuario_nuevo)
                 print(f"Usuario {new_user} añadido correctamente")
-                lista_exist.append(usuario_nuevo["nombre"])             #para añadir el primer nombre a la lista
+                lista_exist.append(usuario_nuevo["nombre"])             #para añadir el primer nombre a la lista, sino la lista va con 1 de retraso
 
         case "2":
             nueva_visita = input("A que usuario quieres añadir una visita? ").strip().title()
