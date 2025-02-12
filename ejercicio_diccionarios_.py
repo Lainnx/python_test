@@ -51,8 +51,8 @@ while True:
                 print_users(lista_usuarios)
                 nueva_visita = input("A que usuario quieres añadir una visita? ").strip().title()
                 # print(lista_exist)
-                if nueva_visita in lista_exist:
-                    for user in lista_usuarios:                 #PELIGROSO modificar lista_usuarios dentro del for
+                if nueva_visita in lista_exist:         #TÉCNICA DE FLAG, existe = False fuera del for, existe = True cuando encontramos usuario(dentro) i condicionales luego(mirar codigo profe)
+                    for user in lista_usuarios:                 #PELIGROSO modificar lista_usuarios dentro del for                                      |con prints si el usuario existe o no
                         if user["nombre"] == nueva_visita:      #          modificar listas dentro de bucles cuando estas iterando con ellas
                             user["visitas"] += 1
                             break                               #cuando encontramos al usuario no vale la pena seguir iterando(los nombres son únicos)
@@ -74,6 +74,7 @@ while True:
                                 print(f"El usuario {user["nombre"]} ha visitado {user["visitas"]} vez")
                             else:
                                 print(f"El usuario {user["nombre"]} ha visitado {user["visitas"]} veces")
+                            break
                 else:
                     print("Este usuario NO existe: ", visita)
             else:

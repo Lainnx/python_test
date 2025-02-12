@@ -68,3 +68,9 @@ def add_user(lista_usuarios, new_user):
 # sumar(1,2)      #(1,2)  son tuplas
 # sumar(3,4,5)    #(3,4,5)
 # sumar(6,23,4)   #(6,23,4)
+
+#El return debe ser la ultima instruccion, cuando la funcion llega al return retorna lo que haya y no ejecuta nada más
+#def gusta_cafe(respuesta):
+#    if respuesta:
+#       return "te gusta el cafe"
+#    return "no te gusta el cafe"
