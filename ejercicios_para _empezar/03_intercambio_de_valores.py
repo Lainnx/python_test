@@ -11,3 +11,9 @@ es decir, deben intercambiar sus valores
 La respuesta del programa será:
 "Ahora a vale Y y b vale X" (los valores que sean)
 """
+a = input("Escribe el valor de la 1a variable: ")
+b = input("Escribe el valor de la 2a variable: ")
+x = a
+y = b
+a,b = b,a
+print(f"ahora {a} vale {y} y {b} vale {x}")
