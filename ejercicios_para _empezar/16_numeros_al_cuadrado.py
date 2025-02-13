@@ -17,7 +17,10 @@ try:
             print("Introduce numeros entre el 1 y el 20")
             exit()
     # print(numeros, type(numeros))
+    lista_sq = []
     for numero in numeros:
-        print(f"{(float(numero) ** 2):.2f}",end=", ")
+        lista_sq.append(str(float(numero) ** 2))
+    imp=",".join(lista_sq)
+    print(imp)
 except ValueError:
     print("tienes que introducir numeros ")

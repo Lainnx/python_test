@@ -33,8 +33,8 @@ try:
     elif resta[1] == 0 and resta[0] == 0:
         print("Feliz cumpleaños!")
         edad += 1
-    print(resta)
-    print(f"{fecha_nacimiento}, {fecha_actual}, {edad}")
+    # print(resta)
+    print(f"fecha nacimiento: {fecha_nacimiento}\nfecha actual: {fecha_actual}\nedad: {edad}")
 
 
 except ValueError:

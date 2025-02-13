@@ -43,11 +43,11 @@ print(lista_pares)
 lista_sq = []
 lista_numeros2 = list(range(0,11))  #lista del 0 al 10| 11 elementos
 # print(lista_numeros2)
-for numero in lista_numeros2:
+for numero in lista_numeros2:                 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++                  
     lista_sq.append(numero ** 2)
 print(lista_sq)                                             #los dos codigos hacen lo mismo
 
-#forma 2 (excusivo de python -> list comprehensions)
+#forma 2 (excusivo de python -> list comprehensions)            #LIST COMPREHENSIONS
 lista_sq = print([numero**2 for numero in lista_numeros2])      #deveuelve el num al quadrado obtenido buscando numero en lista_numeros2
                                                                 #el for, el if el else sin :                                                                                                             
 

@@ -8,5 +8,5 @@ La respuesta debe ser: "domingo es hoy"
 '''
 texto = input("Introduce un texto: ").strip().split(" ")
 texto = sorted(texto)
-for i in texto:
-    print(f"{i}", end = " ")
+texto = " ".join(texto)
+print(texto)
