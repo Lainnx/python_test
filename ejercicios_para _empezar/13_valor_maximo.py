@@ -9,3 +9,11 @@ Por ejemplo, si escribe
 La respuesta debe ser:
 "El valor máximo es 5" 
 '''
+
+maxim = 0
+a = input("Introduce varios numeros separados por comas: ")
+# for num in a:
+#     if num.isnumeric():
+#         if float(num) > maxim:
+#             maxim = float(num)
+print(f"el valor maximo es: {max(a)}")  #a es una string, si es iterable se puede usar el max

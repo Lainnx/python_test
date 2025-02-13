@@ -62,6 +62,7 @@ while True:
                 else:
                     print("Debes ir acompañado de un adulto")
             case "4":
+                print("Factura:\n------------------")
                 for entrada in lista_precios:
                     print(f"{entrada["tipo"]}: {entrada["precio"]} € x {entrada["numero"]} = {(entrada["precio"] * entrada["numero"]):.2f}")    #:.2f para mostrar solo 2 decimales
                     total = total + (entrada["numero"]*entrada["precio"])                                                         #con parentesis funciona porque es un operador

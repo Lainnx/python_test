@@ -70,3 +70,17 @@ print(lista1)
 """
 
 # https://www.w3schools.com/python/python_arrays.asp
+
+# lista_exterior = []
+# palabras = ["Hola"," mundo"]
+# for lista_interior in lista_exterior:      #para iterar lista de listas, lista_interior es una lista
+#    for item in lista_interior:
+#         pass    #interactua con item lista interior
+
+# for palabra in palabras:            #itera sobre la lista
+#     for caracter in palabra:        #itera sobre los string(como si fueran listas)
+#         print(caracter)
+
+#lista_total = lista_1 + lista_2
+#lista_2 = lista_total - lista_1        #se puede hacer, unico de python
+
