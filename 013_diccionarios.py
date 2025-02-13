@@ -90,3 +90,15 @@ dic_actualizacion = {"ciudad": "Paris", "edad": 50}
 dic_1.update(dic_actualizacion)                         #modifica valores y añade cosas si no estan
 print(dic_1)
 
+
+dic = {"nombre":0,  #str    el tipo no importa, porque despues se puede reasignar y python tiene tipos dinamicos
+       "apellido":0,#str
+       "edad":0}    #int
+
+cliente = {}
+lista_clientes = []
+
+for key in dic:
+    dato = input(f"{key}: ")
+    cliente[key] = dato
+lista_clientes.append(cliente)
