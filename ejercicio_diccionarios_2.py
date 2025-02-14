@@ -33,7 +33,7 @@ while True:
         2- Mayores de 65 años (seniors) : 6.90
         3- Infantiles : 7.20
         4- Factura
-        5- Salir del programa\n""").strip().lower()
+        5- Salir del programa\n""").strip()
         # print(lista_precios)
         match(op):
             case "1":
@@ -43,14 +43,14 @@ while True:
                     if precio["tipo"] == "estandar":
                         precio["numero"] += num_est
                         # print(precio)
-                        break
+                        # break
             case "2":
                 num_65 = int(input("Cuantas entradas senior quieres comprar? ").strip())
                 for precio in lista_precios:
                     if precio["tipo"] == "+65":
                         precio["numero"] += num_65
                         # print(precio)
-                        break
+                        # break
             case "3":
                 if num_est or num_65:
                     num_infantil = int(input("Cuantas entradas infantiles quieres comprar? ").strip())
@@ -58,11 +58,11 @@ while True:
                         if precio["tipo"] == "infantil":
                             precio["numero"] += num_infantil
                             # print(precio)
-                            break
+                            # break
                 else:
                     print("Debes ir acompañado de un adulto")
             case "4":
-                print("Factura:\n------------------")
+                print("Factura:\n-----------------------------------")
                 for entrada in lista_precios:
                     print(f"{entrada["tipo"]}: {entrada["precio"]} € x {entrada["numero"]} = {(entrada["precio"] * entrada["numero"]):.2f}")    #:.2f para mostrar solo 2 decimales
                     total = total + (entrada["numero"]*entrada["precio"])                                                         #con parentesis funciona porque es un operador
