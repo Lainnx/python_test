@@ -1,4 +1,4 @@
-import edad as ed     #importa todo lo que hay en edad.py -como ed(optativo, alias), sino esta en la misma carpeta hay que poner ruta absoluta donde está el fichero
+# import edad as ed     #importa todo lo que hay en edad.py -como ed(optativo, alias), sino esta en la misma carpeta hay que poner ruta absoluta donde está el fichero
 
 # print(edad.calcula_edad_2("01/05/1682","18/02/2025"))
 # print(ed.calcula_edad_2("01/05/1682","18/02/2025"))
