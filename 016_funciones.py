@@ -74,3 +74,33 @@ def add_user(lista_usuarios, new_user):
 #    if respuesta:
 #       return "te gusta el cafe"
 #    return "no te gusta el cafe"
+
+def separarNombre(apellido_nombre : str) -> str:   #para decirle que tiene que ser un string, pero NO TIENE que ser str, idealmente, para informar
+                                                    # -> lo que va a devolver, notaciones informativas, al pasar el cursos por encima muestra lo de abajo
+    """  
+    Devolverá de forma separada el nombre y el apellido  
+
+    Params\n
+    str -> "Apellido, Nombre"  
+
+    Return\n
+    str -> Nombre, str -> Apellido
+    """
+    # return f"{apellido_nombre.strip().replace(" ", "").split(",")[1]} {apellido_nombre.strip().replace(" ", "").split(",")[0]}"     
+    
+    lista = apellido_nombre.split(",")
+    apellido = lista[0].strip()
+    nombre = lista[1].strip()
+    return nombre, apellido
+
+Nombre = "Apellido, Nombre"
+nombre, apellido = separarNombre(Nombre)
+
+print(nombre, apellido)
+print(separarNombre.__doc__)  #2 _ _ , para mostrar """  """ la "documentacion" de la funcion
+
+# tup = (1,2,3,4)   #si hay mas o menos valores no funciona, too many values to unpack
+# a,b,c = tup
+# print(a,b,c)
+# a = tup[0]    #en cambio si se hace asi da igual cuantos elementos haya, mientras haya uno en la posicion que pides funcionará
+

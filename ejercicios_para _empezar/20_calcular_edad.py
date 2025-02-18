@@ -18,9 +18,8 @@ def fecha_correcta(fecha):
 
 try:
     fecha_nacimiento = input("Introduce tu fecha de nacimiento (DD/MM/AAAA): ").strip().split("/")
-    fecha_actual = input("Introduce la fecha actual (DD/MM/AAAA): ").strip().split("/")
-
     fecha_correcta(fecha_nacimiento)
+    fecha_actual = input("Introduce la fecha actual (DD/MM/AAAA): ").strip().split("/")
     fecha_correcta(fecha_actual)
 
     edad = 0
@@ -33,7 +32,7 @@ try:
     elif resta[1] == 0 and resta[0] == 0:
         print("Feliz cumpleaños!")
         edad += 1
-    # print(resta)
+    print(resta)
     print(f"fecha nacimiento: {fecha_nacimiento}\nfecha actual: {fecha_actual}\nedad: {edad}")
 
 

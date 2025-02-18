@@ -8,14 +8,14 @@ lista_entradas_compradas = []
 #iniciales que hay en el diccionario, que seran las opciones de compra
 lista_iniciales = []
 for clave in tipo_entrada:                  #llena la lista_iniciales con las iniciales de las claves del diccionario para poder usarlas de opciones
-    lista_iniciales.append(clave[0])#aunque el diccionario cambié lo unico que hay que tener en cuenta es que tienen que tener iniciales diferentes
+    lista_iniciales.append(clave[0])        #aunque el diccionario cambié lo unico que hay que tener en cuenta es que tienen que tener iniciales diferentes
 
 compra_activa = True    #sistema de la bandera
 
 while compra_activa:    
     menu = "Precios de las entradas:"
-    for clave, valor in tipo_entrada.items():   #llama al diccionario
-        menu += f"\n{clave[0].upper()}. {clave.capitalize()} : {valor:.2f}€"   #clave[0] es el 1er caracter, sera la opcion
+    for clave, valor in tipo_entrada.items():   #llama al diccionario y asigna la clave a clave y el valor a valor, si mas cosas en orden ","
+        menu += f"\n{clave[0].upper()}. {clave.capitalize()} : {valor:.2f}€"   #clave[0] es el 1er caracter, será la opcion
 
     menu += "\n\nF. Finalizar compra"
     menu += "\nX. Salir sin comprar"
