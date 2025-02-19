@@ -1,5 +1,5 @@
 class Animal():     #en general nombre clase primera mayus
-    def __init__(self, especie1):   #constructor
+    def __init__(self, especie1):   #constructor, tiene que star lo IMPRESCINDIBLE para crear el objeto
         self.especie = especie1
     def __str__(self):
         return f"la especie es: {self.especie}"
