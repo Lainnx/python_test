@@ -23,6 +23,7 @@ mishi = Gato("Siamés")
 print(Perro.__bases__)  #dice el ancestro directo, (Animal)
 print(Animal.__subclasses__())    #descendientes directos (Perro y Gato)
 
-print(milu) #el __str__ esta en Animal, Perro tambien lo puede usar aunque no lo tenga
+print(milu) #el __str__ está en Animal, Perro tambien lo puede usar aunque no lo tenga
             #polimorfismo: se puede tener la misma funcion en diferentes sitios
             #encapsulamiento: se puede tener una variable llamada igual en diferentes sitios
+
