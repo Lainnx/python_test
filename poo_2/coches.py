@@ -36,7 +36,7 @@ class Coche():                                                  #clase BUENA PRA
     def mostrar_caracteristicas(self):
         return f"""Marca: {self.marca}\nColor: {self.color}\nCombustible: {self.combustible}\nCcs: {self.cilindrada}"""
 
-carro = Coche("Opel","Rojo","Eléctrico",1.8)    #instancia objeto Coche y se inicia con las caracteristicas
+carro = Coche("Opel","Rojo","Eléctrico",1.8)    #instancia clase Coche y se inicia objeto con las caracteristicas
 
 print (carro)                                   #print de objeto Coche devolvera en __str__
 print (Coche.mostrar_caracteristicas(carro))    #llama la funcion mostrar_caract(necesita un objeto Coche para ejecutar)

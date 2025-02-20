@@ -15,6 +15,8 @@ Cuando se muestre el objeto deben aparecer todos los atributos
 Hay que crear un método llamado compras_realizadas que tenga esta salida:
 El cliente Fulanito ha comprado xx.xx €
  """
+import os
+os.system("cls")
 
 class Persona():                                #como es la clase principal no es imprescindible poner () pero buena practica
     def __init__(self,nombre,apellido,ciudad):  #__init__(self,nombre:str,apellido:str,ciudad:str) se puede, NOTACION INFORMATIVA, (cuando pasas el cursor por encima)
@@ -46,4 +48,5 @@ cliente1 = Cliente("N","A","C","123",63.23)     #declara objeto Cliente
 
 # print(persona1) #constructor Persona
 print(cliente1) #
-print(Cliente.compras_realizadas(cliente1))    #funcion compras_realizadas, asocia persona1 y cliente1
+# print(Cliente.compras_realizadas(cliente1))    #funcion compras_realizadas, asocia persona1 y cliente1
+print(cliente1.compras_realizadas())
