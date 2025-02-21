@@ -42,7 +42,7 @@ class Restaurante():
                     if dict_reservas[i] < self.reservas_maximas:
                         dict_reservas[i] +=1
                         cliente.turno_reservado=turno_r
-                        lista_clientes.append([cliente.nombre,cliente.turno_reservado])
+                        lista_clientes.append([cliente.nombre,cliente.turno_reservado]) #lista de listas
                         print(f"Reserva realizada {cliente.nombre} turno {cliente.turno_reservado}. Reservas actuales:{dict_reservas[i]}")
                     else:
                         print(f"No se ha podido realizar la reserva(turno {turno_r}), pruebe en otro turno")
@@ -58,7 +58,7 @@ class Restaurante():
         #     for j in range(2):
         #         print(f"{lista_clientes[i][j]} i-{i} j-{j}")
         #         print(f"{lista_clientes[i]}")
-        for i in range(len(lista_clientes)-1):
+        for i in range(len(lista_clientes)):
             for j in range(0,len(lista_clientes)-i-1):  #bubble sort(ni idea de como funciona xd)
                 # print(i, len(lista_clientes))
                 if lista_clientes[j][1] > lista_clientes[j+1][1]:
