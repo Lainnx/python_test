@@ -147,13 +147,22 @@ class Restaurante():
             lista_turnos = [str(turno) for turno in self.turnos]  #itera en self.turnos y asigna a una lista pasando a str para poder imprimir con el .join
             mensaje = f"Lo sentimos no es posible la reserva a las: {hora_reserva}.\n"
             mensaje += f"Nuestros horarios disponibles: " + ", ".join(lista_turnos) + " horas."#separados por ", "turnos son int, habria que hacer una lista donde se convierten los numeros a str
-            return mensaje
+            return mensaje      #si supera este if el turno que nos esta pidiendo esta en la lista, no hace falta ele porque return finaliza funcion
+        #comprobar las reservas anteriores
+        if self.reservas[hora_reserva] < 3: #clave hora_reserva valor < 3
+            self.reservas[hora_reserva] += 1
+            return f"Reserva confirmada a las {hora_reserva} para el cliente {cliente.nombre}"       #super para cuando quieres utilizar un metodo del padre
         else:
-            pass
+            return f"No es posible reservar a las {hora_reserva}."
+            
+        
             
 
 napoli = Restaurante("Napoli","Italiana",(12,13,14,15,20,21,22))
 
 print(napoli.__doc__)   #el comentario de la clase
 print(napoli.__dict__)  #en forma de diccionario, el contenido que tiene el objeto ahora
-print(napoli.reservar(anna,4))
+print(napoli.reservar(anna,14))
+print(napoli.reservar(anna,14))
+print(napoli.reservar(anna,14))
+print(napoli.reservar(anna,14))
