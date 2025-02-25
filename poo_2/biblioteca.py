@@ -71,15 +71,15 @@ class Biblioteca():
 
     def agregar_libro(self,libro,ejemplares):
         if self.lista_libros:
-            a = False
-            for item in self.lista_libros:
+            flag = False
+            for item in self.lista_libros:      #for porque tiene que comprovar si coincide con alguno o no
                 if item.nombre_autor.lower() == libro.nombre_autor.lower() and item.apellido_autor.lower() == libro.apellido_autor.lower() and item.titulo.lower() == libro.titulo.lower():
                     item.ejemplares += ejemplares
-                    print(f"{ejemplares} ejemplares añadidos a {item.titulo}.")
-                    return 0
+                    print(f"{ejemplares} ejemplares añadidos a {item.titulo}.") #el for se tiene que ejecurar todas las veces que sea necesario, hasta que acabe o hasta que
+                    return 0                                                    #encuentre el que cumple la cond. del if(en cuyo caso sale del bucle)
                 else:
-                    a = True
-            if a:
+                    flag = True
+            if flag:
                 libro.ejemplares += ejemplares
                 self.lista_libros.append(libro)
                 print(f"Libro agregado: {libro.titulo}, {libro.ejemplares} ej. disp.")
@@ -120,7 +120,7 @@ bib1=Biblioteca("nombiblio","direcciobibilio")
 bib1.agregar_libro(libro1,3)
 bib1.agregar_libro(libro2,5)
 bib1.agregar_libro(libro2,2)
-bib1.agregar_libro(libro1,300)
+bib1.agregar_libro(libro1,3)
 # bib1.mostrar_lectores()
 bib1.mostrar_libros()
 # bib1.buscar_libros("nombre1","apellido1","titulo2")
