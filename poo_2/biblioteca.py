@@ -66,26 +66,31 @@ class Biblioteca():
     def mostrar_lectores(self):
         # print(self.lista_lectores)
         for lector in self.lista_lectores:
-            print(f"Nombre: {lector.nombre} Apellido: {lector.apellido}")   #si return se termina la funcion por eso solo impria 1, si no return aqui no prints abajo
+            print(f"Nombre: {lector.nombre} Apellido: {lector.apellido}")   #si return se termina la funcion por eso solo imprmia 1, si no return aqui no prints abajo
         
 
     def agregar_libro(self,libro,ejemplares):
         if self.lista_libros:
+            a = False
             for item in self.lista_libros:
                 if item.nombre_autor.lower() == libro.nombre_autor.lower() and item.apellido_autor.lower() == libro.apellido_autor.lower() and item.titulo.lower() == libro.titulo.lower():
                     item.ejemplares += ejemplares
-                    print(f"{ejemplares} añadidos al libro {item.titulo}")
+                    print(f"{ejemplares} ejemplares añadidos a {item.titulo}.")
+                    return 0
                 else:
-                    libro.ejemplares += ejemplares
-                    self.lista_libros.append(libro)
-                    print(f"Libro agregado: {libro.titulo}, {ejemplares} ej. disp.")
+                    a = True
+            if a:
+                libro.ejemplares += ejemplares
+                self.lista_libros.append(libro)
+                print(f"Libro agregado: {libro.titulo}, {libro.ejemplares} ej. disp.")
         else:
             libro.ejemplares += ejemplares
             self.lista_libros.append(libro)
-            print(f"Libro agregado: {libro.titulo}, {ejemplares} ej. disp.")
+            print(f"Libro agregado else1 : {libro.titulo}, {ejemplares} ej. disp.")
     
 
     def mostrar_libros(self):
+        # print("3",self.lista_libros)
         for libro in self.lista_libros:
             print(f"Titulo: {libro.titulo} N.Aut: {libro.nombre_autor} A.Aut: {libro.apellido_autor} - {libro.ejemplares} disponibles.")
 
@@ -93,20 +98,29 @@ class Biblioteca():
     def buscar_libros(self,nombre_autor,apellido_autor,titulo):
         flag = False
         for item in self.lista_libros:
-            if item.nombre_autor == nombre_autor and item.apellido_autor == apellido_autor and item.titulo == titulo:
+            if item.nombre_autor.lower() == nombre_autor.lower() and item.apellido_autor.lower() == apellido_autor.lower() or item.titulo.lower() == titulo.lower():
                 flag = True
         if flag:
-            print(f"El libro {titulo} existe")
+            print(f"El libro {titulo.title()} está en {self.nombre}")
+        else:
+            print(f"El libro {titulo.title()} no está en {self.nombre}")
+
+    
+    def reservar_libros(self,libro):
+        pass
             
 
 # lec1=Lector("nn","aa")
 # lec2=Lector("rr2","aa2")
 libro1=Libro("nombre1","apellido1","titulo1")
-libro2=Libro("nomnvbre2","apellido2","Tilulo2")
+libro2=Libro("nombre2","apellido2","Tilulo2")
 bib1=Biblioteca("nombiblio","direcciobibilio")
 # bib1.agregar_lector(lec1)
 # bib1.agregar_lector(lec2)
 bib1.agregar_libro(libro1,3)
 bib1.agregar_libro(libro2,5)
+bib1.agregar_libro(libro2,2)
+bib1.agregar_libro(libro1,300)
 # bib1.mostrar_lectores()
 bib1.mostrar_libros()
+# bib1.buscar_libros("nombre1","apellido1","titulo2")
