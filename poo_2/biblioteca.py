@@ -76,6 +76,7 @@ class Biblioteca():
                 if item.nombre_autor.lower() == libro.nombre_autor.lower() and item.apellido_autor.lower() == libro.apellido_autor.lower() and item.titulo.lower() == libro.titulo.lower():
                     item.ejemplares += ejemplares
                     print(f"{ejemplares} ejemplares añadidos a {item.titulo}.") #el for se tiene que ejecurar todas las veces que sea necesario, hasta que acabe o hasta que
+                    flag = False
                     return 0                                                    #encuentre el que cumple la cond. del if(en cuyo caso sale del bucle)
                 else:
                     flag = True
