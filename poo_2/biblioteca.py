@@ -121,7 +121,13 @@ class Biblioteca():
                 resta1 = len(item.nombre_autor)-max_col_1   #diferencia
                 nombre_a = item.nombre_autor[:-resta1]
                 resta11=len(nombre_a)-max_col_1-3
-                print(nombre_a[:resta11]+"."*3+"|")
+                print(nombre_a[:resta11]+"."*3+"|")     #no hacer prints, guardar en variables i al final prind, hacer por columnas
+            else:
+                print(f"{item.nombre_autor: <{max_col_1}}|")    #intercala espacios en lugar de puntos .<8
+            if len(item.apellido_autor)>max_col_2:
+                resta2 = len(item.apellido_autor)-max_col_2
+                apellido_a = item.apellido_autor[:-resta2]
+
     
     def buscar_libros(self,nombre_autor,apellido_autor,titulo): #busca libros en la lista de libros
         flag = False    #como uso un for flag para comprovar si se cumple una condicion sin que se ejecute el codigo n veces
