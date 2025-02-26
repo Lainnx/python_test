@@ -57,16 +57,23 @@ class Biblioteca():
 
 
     def agregar_lector(self,lector):
+        flag = False
         if self.lista_lectores:
             # print("lista lectores",self.lista_lectores)
             for item in self.lista_lectores:
                 # print(item.nombre,lector.nombre)
                 if item.nombre.lower() == lector.nombre.lower() and item.apellido.lower() == lector.apellido.lower():
                     print( f"Este lector ya existe en la base de datos")
+                    flag = False
+                    return 0
                 else:
                     # lis_lector = lector
-                    self.lista_lectores.append(lector)
-                    print( f"Lector agregado {lector.nombre}")
+                    flag = True
+            if flag:
+                self.lista_lectores.append(lector)
+                print( f"Lector agregado {lector.nombre}")
+                return 0
+                    
         else:
             self.lista_lectores.append(lector)
             print( f"Lector agregado {lector.nombre} {lector.apellido}")
@@ -164,6 +171,7 @@ libro3=Libro("Nombre3","apellido3","Titulo3")
 bib1=Biblioteca("nombiblio","direcciobibilio")
 bib1.agregar_lector(lec1)
 bib1.agregar_lector(lec2)
+bib1.agregar_lector(lec1)
 bib1.agregar_libro(libro1,3)
 bib1.agregar_libro(libro2,5)
 bib1.agregar_libro(libro2,2)
