@@ -23,11 +23,11 @@ El programa debe crear las siguientes clases con sus métodos:
 import os
 os.system("cls")
 
-class Lector():
-    def __init__(self,nombre,apellido):
+class Lector():                     
+    def __init__(self,nombre,apellido):#constructor de clase Lector
         self.nombre=nombre
         self.apellido=apellido
-        self.lista_prestamos=[] #lista con los libros que tiene prestado cadad lector
+        self.lista_prestamos=[]     #lista con los libros que tiene prestado cada lector
 
     def __str__(self):
         ret = f"Nombre: {self.nombre}, Apellido: {self.apellido}\n"
@@ -38,128 +38,123 @@ class Lector():
 
 
 class Libro():
-    def __init__(self,nombre_autor,apellido_autor,titulo):
+    def __init__(self,nombre_autor,apellido_autor,titulo):  #constructor de clase Libro
         self.nombre_autor=nombre_autor
         self.apellido_autor=apellido_autor
         self.titulo=titulo
-        self.ejemplares=0
+        self.ejemplares=0       #numero de ejemplares de cada libro que hay en la biblioteca, = 0 al principio, luego hago siempre += o -= para actualizar este numero
 
     def __str__(self):
         ret = f"Nombre autor: {self.nombre_autor} {self.apellido_autor}\nTitulo: {self.titulo}. {self.ejemplares} ej."
         return ret
 
 class Biblioteca():
-    def __init__(self,nombre,direccion):
+    def __init__(self,nombre,direccion):    #constructor de clase Biblioteca
         self.nombre=nombre
         self.direccion=direccion
-        self.lista_lectores=[]
-        self.lista_libros=[]
+        self.lista_lectores=[]          #declaracion de lista de lectores (vacía al principio) 
+        self.lista_libros=[]            #declaracion de lista de libros (vacía al principio)
 
 
-    def agregar_lector(self,lector):
-        flag = False
-        if self.lista_lectores:
+    def agregar_lector(self,lector):    #funcion que agrega lectores a la biblioteca
+        flag = False                    #esta variable indicara si hay que añadir o no a la lista de lectores(porque sino en el for se añaden mas de una vez)
+        if self.lista_lectores:         #si la lista de lectores tiene elementos dentro
             # print("lista lectores",self.lista_lectores)
-            for item in self.lista_lectores:
+            for item in self.lista_lectores:    #iteramos sobre la lista de lectores
                 # print(item.nombre,lector.nombre)
-                if item.nombre.lower() == lector.nombre.lower() and item.apellido.lower() == lector.apellido.lower():
-                    print( f"Este lector ya existe en la base de datos")
-                    flag = False
-                    return 0
+                if item.nombre.lower() == lector.nombre.lower() and item.apellido.lower() == lector.apellido.lower():   #si el nombre y el apellido del lector que queremos añadir == al nombre y ap. del lector en lista_lectores
+                    print( f"Este lector ya existe en la base de datos")                                                #es que ese lector ya existe en la lista, informamos y salimos de la funcion con return 0
+                    return 0    #flag = False aqui no hace falta porque return 0 ya sale de la función
                 else:
                     # lis_lector = lector
-                    flag = True
-            if flag:
-                self.lista_lectores.append(lector)
-                print( f"Lector agregado {lector.nombre}")
+                    flag = True     #si el lector que queremos añadir no coincide con el de la lista (en una iteración) flag sera true, y si no esta en la lista nunca entrara en el if de arriba, por lo que cuando salga del for entrara en la siguiente condicion
+            if flag:                #si flag es True(el nombre que queremos añadir no esta ya en la lista lectores)
+                self.lista_lectores.append(lector)  #lo añadimos a la lista
+                print( f"Lector agregado {lector.nombre}")  #e informamos de ello al usuario
                 return 0
                     
-        else:
+        else:                           #si la lista no tiene elementos dentro añade el lector actual directamente, no hace falta comprovar porque es el primero
             self.lista_lectores.append(lector)
             print( f"Lector agregado {lector.nombre} {lector.apellido}")
 
 
-    def mostrar_lectores(self):
+    def mostrar_lectores(self):     #muestra todos los lectores registrados en la biblioteca
         # print(self.lista_lectores)
-        for lector in self.lista_lectores:
-            print(f"Nombre: {lector.nombre} Apellido: {lector.apellido} {lector.lista_prestamos}")   #si return se termina la funcion por eso solo imprmia 1, si no return aqui no prints abajo
+        for lector in self.lista_lectores:      #itera sobre la lista de lectores e imprime cada elemento con cierto formato
+            print(f"Nombre: {lector.nombre} Apellido: {lector.apellido} - {lector.lista_prestamos}")   #si return se termina la funcion por eso solo imprmia 1, si no return aqui no prints abajo
         
 
-    def agregar_libro(self,libro,ejemplares):
-        if self.lista_libros:
+    def agregar_libro(self,libro,ejemplares):   #funcion para agregar libros a la biblioteca
+        if self.lista_libros:           #si la lista de libros tiene elementos dentro (no se puede iterar sobre una lista vacía)
             flag = False
             for item in self.lista_libros:      #for porque tiene que comprovar si coincide con alguno o no
-                if item.nombre_autor.lower() == libro.nombre_autor.lower() and item.apellido_autor.lower() == libro.apellido_autor.lower() and item.titulo.lower() == libro.titulo.lower():
-                    item.ejemplares += ejemplares
-                    print(f"{ejemplares} ejemplares añadidos a {item.titulo}.") #el for se tiene que ejecurar todas las veces que sea necesario, hasta que acabe o hasta que
-                    flag = False
-                    return 0                                                    #encuentre el que cumple la cond. del if(en cuyo caso sale del bucle)
-                else:
-                    flag = True
-            if flag:
-                libro.ejemplares += ejemplares
+                if item.nombre_autor.lower() == libro.nombre_autor.lower() and item.apellido_autor.lower() == libro.apellido_autor.lower() and item.titulo.lower() == libro.titulo.lower(): #si el libro es el mismo
+                    item.ejemplares += ejemplares   #suma los ejemplares nuevos a los existentes
+                    print(f"{ejemplares} ejemplares añadidos a {item.titulo}.") #el for se tiene que ejecutar todas las veces que sea necesario, hasta que acabe o hasta que
+                    return 0                                                    #encuentre el que cumple la cond. del if(en cuyo caso sale de la funcion directamente)
+                else:                                                           #sino flag = True para que se ejecute el resto del codigo
+                    flag = True                                                 #
+            if flag:                        
+                libro.ejemplares += ejemplares  
                 self.lista_libros.append(libro)
                 print(f"Libro agregado: {libro.titulo}, {libro.ejemplares} ej. disp.")
-        else:
-            libro.ejemplares += ejemplares
-            self.lista_libros.append(libro)
-            print(f"Libro agregado else1 : {libro.titulo}, {ejemplares} ej. disp.")
+        else:                               #si la lista esta vacía añade el primer elemento (como es el primero no hace falta comprovar si ya está dentro o no)
+            libro.ejemplares += ejemplares  #suma el numero de ejemplares nuevo al existente(la variable empieza con valor 0)
+            self.lista_libros.append(libro) #añade el libro a la lista de libros
+            print(f"Libro agregado: {libro.titulo}, {ejemplares} ej. disp.")    #informa al usuario
     
 
-    def mostrar_libros(self):
+    def mostrar_libros(self):   #muestra los libros que hay en la lista de la biblioteca
         # print("3",self.lista_libros)
-        for libro in self.lista_libros:
-            print(f"Titulo: {libro.titulo} N.Aut: {libro.nombre_autor} A.Aut: {libro.apellido_autor} - {libro.ejemplares} disponibles.")
+        for libro in self.lista_libros: #itera sobre la lista de libros
+            print(f"Titulo: {libro.titulo} N.Aut: {libro.nombre_autor} A.Aut: {libro.apellido_autor} - {libro.ejemplares} disponibles.")    #hace print de los libros con un formato
 
     
-    def buscar_libros(self,nombre_autor,apellido_autor,titulo):
-        flag = False
-        for item in self.lista_libros:
-            if item.nombre_autor.lower() == nombre_autor.lower() and item.apellido_autor.lower() == apellido_autor.lower() or item.titulo.lower() == titulo.lower():
-                flag = True
-        if flag:
-            print(f"El libro {titulo.title()} está en {self.nombre}")
+    def buscar_libros(self,nombre_autor,apellido_autor,titulo): #busca libros en la lista de libros
+        flag = False    #como uso un for flag para comprovar si se cumple una condicion sin que se ejecute el codigo n veces
+        for item in self.lista_libros:      #itera sobre lista de libros
+            if item.nombre_autor.lower() == nombre_autor.lower() and item.apellido_autor.lower() == apellido_autor.lower() or item.titulo.lower() == titulo.lower():    #si el libro es el mismo es que existe
+                flag = True     #flag True para ejecutar el codigo
+        if flag:    #si flag sigue siendo false es que el libro no esta en la lista(nunca se cumplió la condicion de arriba)
+            print(f"El libro {titulo.title()} está en {self.nombre}")   #si es True es que si que está en la lista
         else:
             print(f"El libro {titulo.title()} no está en {self.nombre}")
 
     
-    def reservar_libros(self,nombre_libro:str,lector:Lector):
-        flag = False
-        for libro in self.lista_libros:
+    def reservar_libros(self,nombre_libro:str,lector:Lector):   #funcion para reservar libros
+        flag = False    #otra vez, al usar un for uso flag para ccomprovar condiciones
+        for libro in self.lista_libros: #itero sobre lista libros
             if libro.titulo == nombre_libro:    #cuando el nombre del libro que esta en la biblioteca sea igual al libro que se esta solicitando
-                if libro.ejemplares > 0:
-                    libro.ejemplares -= 1
-                    lector.lista_prestamos.append(libro)
-                    print(f"Reserva realizada de: {libro.titulo} por {lector.nombre} {lector.apellido}.")
+                if libro.ejemplares > 0:    #si hay ejemplares disponibles para ser prestados
+                    libro.ejemplares -= 1   #uno menos(el que se llevan)
+                    lector.lista_prestamos.append(libro)    #se añade el libro a la lista de prestamos del usuario, hay un registro en cada objeto Lector con los libros que tienen prestados
+                    print(f"Reserva realizada de: {libro.titulo} por {lector.nombre} {lector.apellido}.")   #y se informa
                     print(f"Quedan {libro.ejemplares} ejemplares del libro {libro.titulo}.")
-                    flag = False
-                    return 0
+                    return 0    #si se ejecuta el codigo de arriba la funcion ya ha cumplido su funcion por lo que return 0 la termina
                 else:
-                    print(f"No quedan ejemplares de {libro.titulo} para prestar.")
-                    flag = False
+                    print(f"No quedan ejemplares de {libro.titulo} para prestar.")  #si no quedan ejemplares disponibles se informa y se termina la funcion
                     return 0
-            else:
+            else:   #este else se ejecutará cuando el nombre del libro a reservar no coincida con el de la iteracion del for, en cuyo caso flag = True
                 flag = True
-        if flag:
+        if flag:    #si flag persiste siendo True querra decir que el codigo nunca ha entrado en los ifs de arriba(los return 0 terminan la funcion) por lo que querra decir que el libro no existe en la lista de libros de la biblioteca
             print(f"El libro {nombre_libro} no esta en el registro de la biblioteca {self.nombre}.")
             
     
-    def devolver_libros(self,nombre_libro,lector:Lector):
-        flag = False
-        if lector.lista_prestamos:
-            for item in lector.lista_prestamos:
-                if item.titulo == nombre_libro:
+    def devolver_libros(self,nombre_libro,lector:Lector):   #funcion para devolver libros
+        flag = False    #lo mismo, como uso for uso una flag para comprobar
+        if lector.lista_prestamos:  #si la lista de prestamos del lector tiene algun elemento dentro(tiene prestado algun libro)
+            for item in lector.lista_prestamos: #itera sobre la lista de prestamos del objeto lector
+                if item.titulo == nombre_libro: #si el nombre del libro a devolver coinde con el nombre del libro iterado
                     self.agregar_libro(item,1)  #el libro que se devuelve, 1 ejemplar
-                    lector.lista_prestamos.remove(item)
-                    print(f"Libro {item.titulo} devuelto con exito: quedan {item.ejemplares}")
-                    flag = False
-                    return 0
-                else:
+                    lector.lista_prestamos.remove(item) #se elimina de la lista de prestamos del lector
+                    print(f"Libro {item.titulo} devuelto con exito.")   #se informa
+                    return 0    #termina la funcion
+                else:   #
                     flag = True    
-        else:
+        else:   #sino tiene elementos dentro no tiene nada que devolver
             print(f"Este lector no tiene libros que devolver.")
             return 0
-        if flag:
+        if flag:    #si flag persiste y cuando llega aqui es True es que nunca ha entrado en el codigo de arriba, lo que quiere decir que el libro que se esta intentando devolver no esta en la lista
             print(f"El libro que estas intentando devolver no pertenece a esta biblioteca.")
             
 
