@@ -84,7 +84,7 @@ class Biblioteca():
             print(f"Nombre: {lector.nombre} Apellido: {lector.apellido} - {lector.lista_prestamos}")   #si return se termina la funcion por eso solo imprmia 1, si no return aqui no prints abajo
         
 
-    def agregar_libro(self,libro,ejemplares):   #funcion para agregar libros a la biblioteca
+    def agregar_libro(self,libro:Libro,ejemplares:int):   #funcion para agregar libros a la biblioteca
         if self.lista_libros:           #si la lista de libros tiene elementos dentro (no se puede iterar sobre una lista vacía)
             flag = False
             for item in self.lista_libros:      #for porque tiene que comprovar si coincide con alguno o no
@@ -106,9 +106,22 @@ class Biblioteca():
 
     def mostrar_libros(self):   #muestra los libros que hay en la lista de la biblioteca
         # print("3",self.lista_libros)
-        for libro in self.lista_libros: #itera sobre la lista de libros
-            print(f"Titulo: {libro.titulo} N.Aut: {libro.nombre_autor} A.Aut: {libro.apellido_autor} - {libro.ejemplares} disponibles.")    #hace print de los libros con un formato
-
+        # for libro in self.lista_libros: #itera sobre la lista de libros
+        #     print(f"Titulo: {libro.titulo} N.Aut: {libro.nombre_autor} A.Aut: {libro.apellido_autor} - {libro.ejemplares} disponibles.")    #hace print de los libros con un formato
+        max_col_1 = 10
+        max_col_2 = 15
+        max_col_3 = 10
+        lista1 =[0,"|",0,"|",0]
+        print(f"Libros de la {self.nombre}")
+        print(f"Autor     |Titulo         |Ejemplares")
+        print(f"--------------------------------------")
+        for item in self.lista_libros:
+            nombre_a=""
+            if len(item.nombre_autor)>max_col_1:    #siempre que pase esto pondremos los ...
+                resta1 = len(item.nombre_autor)-max_col_1   #diferencia
+                nombre_a = item.nombre_autor[:-resta1]
+                resta11=len(nombre_a)-max_col_1-3
+                print(nombre_a[:resta11]+"."*3+"|")
     
     def buscar_libros(self,nombre_autor,apellido_autor,titulo): #busca libros en la lista de libros
         flag = False    #como uso un for flag para comprovar si se cumple una condicion sin que se ejecute el codigo n veces
@@ -140,7 +153,7 @@ class Biblioteca():
             print(f"El libro {nombre_libro} no esta en el registro de la biblioteca {self.nombre}.")
             
     
-    def devolver_libros(self,nombre_libro,lector:Lector):   #funcion para devolver libros
+    def devolver_libros(self,nombre_libro:str,lector:Lector):   #funcion para devolver libros
         flag = False    #lo mismo, como uso for uso una flag para comprobar
         if lector.lista_prestamos:  #si la lista de prestamos del lector tiene algun elemento dentro(tiene prestado algun libro)
             for item in lector.lista_prestamos: #itera sobre la lista de prestamos del objeto lector
@@ -160,7 +173,7 @@ class Biblioteca():
 
 lec1=Lector("nn","aa")
 lec2=Lector("rr2","aa2")
-libro1=Libro("nombre1","apellido1","titulo1")
+libro1=Libro("nombreeeeeeeeee","apellidoqqqqqqqqqqqqqqqqqqqqqq1","tituqqqqqqqqqqqqqqqqqlo1")
 libro2=Libro("nombre2","apellido2","Tilulo2")
 libro3=Libro("Nombre3","apellido3","Titulo3")
 bib1=Biblioteca("nombiblio","direcciobibilio")
