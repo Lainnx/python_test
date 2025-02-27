@@ -117,16 +117,29 @@ class Biblioteca():
         print(f"--------------------------------------")
         for item in self.lista_libros:
             nombre_a=""
-            if len(item.nombre_autor)>max_col_1:    #siempre que pase esto pondremos los ...
+            if len(item.nombre_autor)>max_col_1:    #siempre que pase esto pondremos los ...    COLUMNA 1
                 resta1 = len(item.nombre_autor)-max_col_1   #diferencia
                 nombre_a = item.nombre_autor[:-resta1]
-                resta11=len(nombre_a)-max_col_1-3
-                print(nombre_a[:resta11]+"."*3+"|")     #no hacer prints, guardar en variables i al final prind, hacer por columnas
-            else:
-                print(f"{item.nombre_autor: <{max_col_1}}|")    #intercala espacios en lugar de puntos .<8
-            if len(item.apellido_autor)>max_col_2:
+                resta11 = len(nombre_a)-max_col_1-3
+                print(nombre_a[:resta11]+"."*3+"|",end="")     #no hacer prints, guardar en variables i al final prind, hacer por columnas
+            elif len(item.nombre_autor)<=max_col_1:
+                print(f"{item.nombre_autor: <{max_col_1}}|",end="")    #intercala espacios en lugar de puntos .<8
+
+            if len(item.apellido_autor)>max_col_2:              #COLUMNA 2
                 resta2 = len(item.apellido_autor)-max_col_2
                 apellido_a = item.apellido_autor[:-resta2]
+                resta22 = len(apellido_a)-max_col_2-3
+                print(apellido_a[:resta22]+"."*3+"|",end="")
+            elif len(item.apellido_autor)<=max_col_2:
+                print(f"{item.apellido_autor: <{max_col_2}}|",end="")
+            
+            if len(item.titulo)>max_col_3:              #COLUMNA 3
+                resta3 = len(item.titulo)-max_col_3
+                titulo_a = item.titulo[:-resta3]
+                resta33 = len(titulo_a)-max_col_3-3
+                print(titulo_a[:resta33]+"."*3+"|",end="\n")
+            elif len(item.titulo) <= max_col_3:
+                print(f"{item.titulo: <{max_col_3}}|",end="\n")
 
     
     def buscar_libros(self,nombre_autor,apellido_autor,titulo): #busca libros en la lista de libros
