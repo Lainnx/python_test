@@ -122,7 +122,7 @@ class Biblioteca():
                 resta1 = len(nombre_autor)-max_col_1   #diferencia
                 nombre_a = nombre_autor[:-resta1]
                 resta11 = len(nombre_a)-max_col_1-3
-                print(nombre_a[:resta11]+"."*3+"|",end="")     #no hacer prints, guardar en variables i al final prind, hacer por columnas
+                print(nombre_a[:resta11]+"."*3+"|",end="")     #
             elif len(nombre_autor)<=max_col_1:
                 print(f"{nombre_autor: <{max_col_1}}|",end="")    #intercala espacios en lugar de puntos .<8
 
